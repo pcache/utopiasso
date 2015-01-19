@@ -21,7 +21,7 @@
        <!-- 把标记了@Controller @Service注解的类转换为bean-->
        <context:component-scan base-package="com.nuoyu.utopia.utopiasso.web.controller" />
        <context:component-scan base-package="com.nuoyu.utopia.utopiasso.service" />
-       <context:component-scan base-package="com.nuoyu.utopia.utopiasso.interfaces.service" />
+       <!--<context:component-scan base-package="com.nuoyu.utopia.utopiasso.interfaces.service" />-->
        <!-- 启动Spring MVC的注解功能，完成请求和注解POJO的映射 -->
        <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />
        <!--导入内容协商配置 配置view  velocity jsp json xml-->

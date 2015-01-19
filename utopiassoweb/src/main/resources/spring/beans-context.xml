@@ -13,4 +13,18 @@
     <bean class="com.nuoyu.utopia.utopiasso.component.wall.LogObstacle"/>
     <!--定义全局异常处理机制-->
     <bean class="com.nuoyu.utopia.utopiasso.component.exception.resolver.UtopiaExceptionResolver"/>
+    <!--调用hession远程服务   客户端类-->
+    <!-- 客户端Hessian代理工厂Bean-->
+    <bean class="com.nuoyu.utopia.utopiasso.persistence.remote.RemoteExample">
+        <property name="remoteExampleService" ref="clientExample"/>
+    </bean>
+    <bean id="clientExample" class="org.springframework.remoting.caucho.HessianProxyFactoryBean">
+        <property name="serviceUrl">
+            <value>http://localhost:8081/remoting/example</value>
+        </property>
+        <property name="serviceInterface">
+            <value>com.nuoyu.utopia.utopiasso.interfaces.service.example.IRemoteExampleService</value>
+        </property>
+    </bean>
+
 </beans>

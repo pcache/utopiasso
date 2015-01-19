@@ -5,5 +5,7 @@ package com.nuoyu.utopia.utopiasso.interfaces.service.example;
  */
 public interface IRemoteExampleService {
 
+
+
     public void test2();
 }
