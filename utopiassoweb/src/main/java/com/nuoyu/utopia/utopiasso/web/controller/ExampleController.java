@@ -1,11 +1,9 @@
 package com.nuoyu.utopia.utopiasso.web.controller;
 
 import com.nuoyu.utopia.utopiasso.component.exception.UtopiaException;
-import com.nuoyu.utopia.utopiasso.interfaces.service.example.impl.RemoteExampleServiceImpl;
 import com.nuoyu.utopia.utopiasso.pojo.Example;
 import com.nuoyu.utopia.utopiasso.service.example.IExampleService;
 import com.nuoyu.utopia.utopiasso.service.example.ITestRemoteService;
-import com.nuoyu.utopia.utopiasso.service.example.impl.ITestRemoteServiceImpl;
 import com.nuoyu.utopia.utopiasso.web.cmd.BaseCommand;
 import com.nuoyu.utopia.utopiasso.web.dto.ExampleDto;
 import org.springframework.beans.factory.annotation.Autowired;
