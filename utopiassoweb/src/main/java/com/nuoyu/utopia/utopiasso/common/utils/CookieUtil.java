@@ -34,11 +34,12 @@ public class CookieUtil {
 
     /**
      * 得到Cookie的值, 不编码 默认从本地线程获取
+     *
      * @param cookieName
      * @return
      */
-    public static String getCookieValue(String cookieName){
-        return getCookieValue((HttpServletRequest)UtopiaTheadLocal.getParamFromLocal(UtopiaConstants.UTOPIA_CONTEXT_REQUEST),cookieName);
+    public static String getCookieValue(String cookieName) {
+        return getCookieValue((HttpServletRequest) UtopiaTheadLocal.getParamFromLocal(UtopiaConstants.UTOPIA_CONTEXT_REQUEST), cookieName);
     }
 
     /**
@@ -74,12 +75,13 @@ public class CookieUtil {
 
     /**
      * 得到Cookie的值,可以选择是否以UTF-8形式编码 默认从本地线程取
+     *
      * @param cookieName
-     * @param isDecoder 如果TRUE则按UTF-8编码
+     * @param isDecoder  如果TRUE则按UTF-8编码
      * @return
      */
-    public static String getCookieValue(String cookieName, boolean isDecoder){
-       return  getCookieValue((HttpServletRequest)UtopiaTheadLocal.getParamFromLocal(UtopiaConstants.UTOPIA_CONTEXT_REQUEST),cookieName,isDecoder);
+    public static String getCookieValue(String cookieName, boolean isDecoder) {
+        return getCookieValue((HttpServletRequest) UtopiaTheadLocal.getParamFromLocal(UtopiaConstants.UTOPIA_CONTEXT_REQUEST), cookieName, isDecoder);
     }
 
     /**
@@ -90,7 +92,7 @@ public class CookieUtil {
      * @return
      */
     public static String getCookieValue(HttpServletRequest request,
-                                        String cookieName,String encodeString) {
+                                        String cookieName, String encodeString) {
         Cookie cookieList[] = request.getCookies();
         if (cookieList == null || cookieName == null)
             return null;
@@ -113,12 +115,13 @@ public class CookieUtil {
 
     /**
      * 得到Cookie的值,可以选择编码方式 默认request从ThroadLocal中获取
+     *
      * @param cookieName
      * @param encodeString
      * @return
      */
-    public static String getCookieValue(String cookieName,String encodeString){
-        return getCookieValue((HttpServletRequest)UtopiaTheadLocal.getParamFromLocal(UtopiaConstants.UTOPIA_CONTEXT_REQUEST),cookieName,encodeString);
+    public static String getCookieValue(String cookieName, String encodeString) {
+        return getCookieValue((HttpServletRequest) UtopiaTheadLocal.getParamFromLocal(UtopiaConstants.UTOPIA_CONTEXT_REQUEST), cookieName, encodeString);
     }
 
     /**
@@ -133,9 +136,9 @@ public class CookieUtil {
      * 设置Cookie的值 不设置生效时间默认浏览器关闭即失效,也不编码 默认从本地线程取
      */
     public static void setCookie(String cookieName, String cookieValue) {
-        setCookie((HttpServletRequest)UtopiaTheadLocal.getParamFromLocal(UtopiaConstants.UTOPIA_CONTEXT_REQUEST),
-                (HttpServletResponse)UtopiaTheadLocal.getParamFromLocal(UtopiaConstants.UTOPIA_CONTEXT_RESPONSE)
-        ,cookieName, cookieValue);
+        setCookie((HttpServletRequest) UtopiaTheadLocal.getParamFromLocal(UtopiaConstants.UTOPIA_CONTEXT_REQUEST),
+                (HttpServletResponse) UtopiaTheadLocal.getParamFromLocal(UtopiaConstants.UTOPIA_CONTEXT_RESPONSE)
+                , cookieName, cookieValue);
     }
 
     /**
@@ -159,14 +162,15 @@ public class CookieUtil {
 
     /**
      * 设置Cookie的值 不设置生效时间,但编码
+     *
      * @param cookieName
      * @param cookieValue
-     * @param isEncode  if true encode By utf-8
+     * @param isEncode    if true encode By utf-8
      */
-    public static void setCookie(String cookieName, String cookieValue, boolean isEncode){
-        setCookie((HttpServletRequest)UtopiaTheadLocal.getParamFromLocal(UtopiaConstants.UTOPIA_CONTEXT_REQUEST),
-                (HttpServletResponse)UtopiaTheadLocal.getParamFromLocal(UtopiaConstants.UTOPIA_CONTEXT_RESPONSE)
-                ,cookieName,cookieValue,isEncode);
+    public static void setCookie(String cookieName, String cookieValue, boolean isEncode) {
+        setCookie((HttpServletRequest) UtopiaTheadLocal.getParamFromLocal(UtopiaConstants.UTOPIA_CONTEXT_REQUEST),
+                (HttpServletResponse) UtopiaTheadLocal.getParamFromLocal(UtopiaConstants.UTOPIA_CONTEXT_RESPONSE)
+                , cookieName, cookieValue, isEncode);
     }
 
     /**
@@ -183,9 +187,9 @@ public class CookieUtil {
      * 设置Cookie的值 在指定时间内生效, 编码参数
      */
     public static void setCookie(String cookieName, String cookieValue, int cookieMaxage, boolean isEncode) {
-        doSetCookie((HttpServletRequest)UtopiaTheadLocal.getParamFromLocal(UtopiaConstants.UTOPIA_CONTEXT_REQUEST),
-                (HttpServletResponse)UtopiaTheadLocal.getParamFromLocal(UtopiaConstants.UTOPIA_CONTEXT_RESPONSE)
-                ,cookieName, cookieValue, cookieMaxage,
+        doSetCookie((HttpServletRequest) UtopiaTheadLocal.getParamFromLocal(UtopiaConstants.UTOPIA_CONTEXT_REQUEST),
+                (HttpServletResponse) UtopiaTheadLocal.getParamFromLocal(UtopiaConstants.UTOPIA_CONTEXT_RESPONSE)
+                , cookieName, cookieValue, cookieMaxage,
                 isEncode);
     }
 
@@ -202,10 +206,10 @@ public class CookieUtil {
     /**
      * 设置Cookie的值 在指定时间内生效, 编码参数(指定编码)
      */
-    public static void setCookie(String cookieName,String cookieValue, int cookieMaxage, String encodeString) {
-        doSetCookie((HttpServletRequest)UtopiaTheadLocal.getParamFromLocal(UtopiaConstants.UTOPIA_CONTEXT_REQUEST),
-                (HttpServletResponse)UtopiaTheadLocal.getParamFromLocal(UtopiaConstants.UTOPIA_CONTEXT_RESPONSE)
-                ,cookieName, cookieValue, cookieMaxage, encodeString);
+    public static void setCookie(String cookieName, String cookieValue, int cookieMaxage, String encodeString) {
+        doSetCookie((HttpServletRequest) UtopiaTheadLocal.getParamFromLocal(UtopiaConstants.UTOPIA_CONTEXT_REQUEST),
+                (HttpServletResponse) UtopiaTheadLocal.getParamFromLocal(UtopiaConstants.UTOPIA_CONTEXT_RESPONSE)
+                , cookieName, cookieValue, cookieMaxage, encodeString);
     }
 
     /**
@@ -220,16 +224,15 @@ public class CookieUtil {
      * 删除Cookie带cookie域名
      */
     public static void deleteCookie(String cookieName) {
-        doSetCookie((HttpServletRequest)UtopiaTheadLocal.getParamFromLocal(UtopiaConstants.UTOPIA_CONTEXT_REQUEST),
-                (HttpServletResponse)UtopiaTheadLocal.getParamFromLocal(UtopiaConstants.UTOPIA_CONTEXT_RESPONSE)
-                ,cookieName, "", -1, false);
+        doSetCookie((HttpServletRequest) UtopiaTheadLocal.getParamFromLocal(UtopiaConstants.UTOPIA_CONTEXT_REQUEST),
+                (HttpServletResponse) UtopiaTheadLocal.getParamFromLocal(UtopiaConstants.UTOPIA_CONTEXT_RESPONSE)
+                , cookieName, "", -1, false);
     }
 
     /**
      * 设置Cookie的值，并使其在指定时间内生效
      *
-     * @param cookieMaxage
-     *            cookie生效的最大秒数
+     * @param cookieMaxage cookie生效的最大秒数
      */
     private static final void doSetCookie(HttpServletRequest request,
                                           HttpServletResponse response, String cookieName,
@@ -248,15 +251,14 @@ public class CookieUtil {
             cookie.setPath("/");
             response.addCookie(cookie);
         } catch (Exception e) {
-            log.error("Cookie Encode Error.",e);
+            log.error("Cookie Encode Error.", e);
         }
     }
 
     /**
      * 设置Cookie的值，并使其在指定时间内生效
      *
-     * @param cookieMaxage
-     *            cookie生效的最大秒数
+     * @param cookieMaxage cookie生效的最大秒数
      */
     private static final void doSetCookie(HttpServletRequest request,
                                           HttpServletResponse response, String cookieName,
@@ -264,7 +266,7 @@ public class CookieUtil {
         try {
             if (cookieValue == null) {
                 cookieValue = "";
-            } else  {
+            } else {
                 cookieValue = URLEncoder.encode(cookieValue, encodeString);
             }
             Cookie cookie = new Cookie(cookieName, cookieValue);
@@ -275,7 +277,7 @@ public class CookieUtil {
             cookie.setPath("/");
             response.addCookie(cookie);
         } catch (Exception e) {
-            log.error("Cookie Encode Error.",e);
+            log.error("Cookie Encode Error.", e);
         }
     }
 
@@ -295,7 +297,7 @@ public class CookieUtil {
             serverName = serverName.substring(0, end);
             final String[] domains = serverName.split("\\.");
             int len = domains.length;
-            if(len > 3) {
+            if (len > 3) {
                 // www.xxx.com.cn
                 domainName = "." + domains[len - 3] + "." + domains[len - 2] + "." + domains[len - 1];
             } else if (len <= 3 && len > 1) {
