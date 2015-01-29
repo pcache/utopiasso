@@ -12,9 +12,6 @@ import org.springframework.web.context.request.WebRequest;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
 
 /**
  * Created by Administrator on 2015/1/8.
@@ -37,6 +34,7 @@ public class UtopiaWebBindingInitializer implements WebBindingInitializer {
             cmd.setIp(getClientIpWithProxy(cmd.getRequest()));
             log.info("初始化请求参数:::end request ip:" + cmd.getIp());
         }
+
     }
 
     /**

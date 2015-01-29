@@ -18,7 +18,7 @@ import java.util.List;
 public class JsonUtil {
 
     private static final Logger log = LoggerFactory.getLogger(JsonUtil.class);
-    //ObjectMapper实例
+    //ObjectMapper实例 线程安全
     private static ObjectMapper objectMapper = new ObjectMapper();
 
     /**
@@ -84,7 +84,7 @@ public class JsonUtil {
             result = new ArrayList<T>();
             Iterator<JsonNode> ito = node.iterator();
             while (ito.hasNext()) {
-                result.add(JsonUtil.jsonToBean(ito.next().toString(), cls));
+                result.add(jsonToBean(ito.next().toString(), cls));
             }
         }
         return result;
@@ -98,7 +98,7 @@ public class JsonUtil {
      * @return
      */
     public static <T> List<T> transformJsonToList(String json, Class<T> cls) {
-        return JsonUtil.transformJsonToList(JsonUtil.transformJson(json), cls);
+        return transformJsonToList(transformJson(json), cls);
     }
 
 

@@ -15,7 +15,7 @@
     <import resource="beans-context.xml"/>
     <!--
     缓存等(工厂) 公共组建 安全组件 资源权限 Shiro  用户表有类型  shiro中 策略根据不同应用的实现来控制权限 如网站 后台  不同的实现类
-    加密  字符串等处理 对象转换工具 json
+    加密
     -->
 
 </beans>
