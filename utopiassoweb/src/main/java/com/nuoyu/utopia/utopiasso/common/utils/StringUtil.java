@@ -119,13 +119,4 @@ public class StringUtil {
         return subStringByLength(input, number, "");
     }
 
-    public static void main(String[] args) throws UnsupportedEncodingException {
-
-        // System.out.println(StringEscapeUtils.escapeJavaScript("<abc'>哈哈<abc>"));
-        //System.out.println(xssEncode("<abc\">哈哈&<abc>"));
-        // System.out.println("<abc'>哈哈&<abc\">".replaceAll("&",StringEscapeUtils.escapeHtml("&")));
-        //System.out.println(StringUtil.subString("中按时大大sss",7,"..."));
-        System.out.println(subStringByLength("中按时大大sss", 15, "..."));
-    }
-
 }

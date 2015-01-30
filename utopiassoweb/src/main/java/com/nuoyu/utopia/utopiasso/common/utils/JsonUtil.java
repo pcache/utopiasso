@@ -101,30 +101,4 @@ public class JsonUtil {
         return transformJsonToList(transformJson(json), cls);
     }
 
-
-    public static void main(String[] args) throws IOException {
-//        String str = "[{\"name\":\"yangjian\",\"age\":28,\"sex\":\"nv\"},{\"name\":\"yangjian\",\"age\":28,\"sex\":\"nv\"}]";
-//        List<LinkedHashMap> list = JsonUtil.jsonToBean(str, List.class);
-//        for (LinkedHashMap eo : list){
-//            System.out.println(eo.toString());
-//        }
-//        ExampleDto d1 = new ExampleDto();d1.setAge(20);d1.setName("a1");d1.setSex("1");
-//        ExampleDto d2 = new ExampleDto();d2.setAge(21);d2.setName("a2");d2.setSex("2");
-//        ExampleDto d3 = new ExampleDto();d3.setAge(22);d3.setName("a3");d3.setSex("3");
-//        List<ExampleDto> list = new ArrayList<ExampleDto>();list.add(d1);list.add(d2);list.add(d3);
-//        System.out.println(JsonUtil.beanToJson(list));
-        String str = "{\"result\":{\"status\":\"1\",\"link\":\"http://localhost:8081/example/test.json\",\"data\":[{\"name\":\"yangjian\",\"age\":28,\"sex\":\"nv\"},{\"name\":\"yangjian\",\"age\":28,\"sex\":\"nv\"}],\"error\":{\"code\":\"\",\"message\":\"\"}}}";
-        // System.out.println(JsonUtil.jsonToBean(str, ExampleDto.class));
-        JsonNode node = objectMapper.readTree(str);
-        Iterator<JsonNode> i = node.get("result").get("data").iterator();
-        System.out.println(node.get("result").get("data").isArray() + "------");
-        while (i.hasNext()) {
-            System.out.println(JsonUtil.jsonToBean(i.next().toString(), ExampleDto.class).getName());
-        }
-        List<ExampleDto> a = JsonUtil.transformJsonToList(node.get("result").get("data"), ExampleDto.class);
-        System.out.println("a:" + a);
-        String str2 = "[{\"name\":\"yangjian\",\"age\":28,\"sex\":\"nv\"},{\"name\":\"yangjian\",\"age\":28,\"sex\":\"nv\"}]";
-        List<ExampleDto> b = JsonUtil.transformJsonToList(str2, ExampleDto.class);
-        System.out.println("b:" + b);
-    }
 }
